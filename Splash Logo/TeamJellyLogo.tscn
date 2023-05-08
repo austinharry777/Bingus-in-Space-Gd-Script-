@@ -1,0 +1,47 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/0.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/1.png" type="Texture" id=2]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/2.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/3.png" type="Texture" id=4]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/5.png" type="Texture" id=5]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/4.png" type="Texture" id=6]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/7.png" type="Texture" id=7]
+[ext_resource path="res://Bingus Assets/graphics/team_jelly_splash/6.png" type="Texture" id=8]
+[ext_resource path="res://Fades/Fadein.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Splash Logo/FadeoutTeamJelly.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Splash Logo/TeamJellyLogo.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "teamjellylogo",
+"speed": 10.0
+} ]
+
+[node name="TeamJelly" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 338, 313 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "teamjellylogo"
+frame = 1
+playing = true
+centered = false
+offset = Vector2( 0, -20 )
+
+[node name="Fadein" parent="." instance=ExtResource( 9 )]
+
+[node name="FadeoutTeamJelly" parent="." instance=ExtResource( 10 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

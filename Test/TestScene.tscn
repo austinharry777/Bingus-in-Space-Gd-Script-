@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Test/Timers.gd" type="Script" id=3]
+[ext_resource path="res://HUD/BossBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PlayerBulletDark/Playerdarkbullet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PlayerBulletLight/Playerlightbullet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SuperBeamDark/SuperBeamDark.tscn" type="PackedScene" id=7]
+
+[node name="TestScene" type="Node"]
+
+[node name="Timers" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="JetPackFfloppa" type="Timer" parent="Timers"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+Bullet = ExtResource( 6 )
+DarkBullet = ExtResource( 5 )
+SuperBeamDark = ExtResource( 7 )
+
+[node name="HUD" parent="Player" instance=ExtResource( 2 )]
+
+[node name="BossBar2" parent="Player/HUD" instance=ExtResource( 4 )]
+
+[connection signal="timeout" from="Timers/JetPackFfloppa" to="Timers" method="_on_JetPackFfloppa_timeout"]
