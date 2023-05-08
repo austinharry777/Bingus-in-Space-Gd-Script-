@@ -1,0 +1,332 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/floppaboss1/1.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/floppaboss1/0.png" type="Texture" id=2]
+[ext_resource path="res://Bingus Assets/graphics/floppaboss1/2.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/floppaboss1/3.png" type="Texture" id=4]
+[ext_resource path="res://Bosses/JetPackFloppa.gd" type="Script" id=5]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/6.png" type="Texture" id=6]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/12.png" type="Texture" id=7]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/16.png" type="Texture" id=8]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/3.png" type="Texture" id=9]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/11.png" type="Texture" id=10]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/14.png" type="Texture" id=11]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/8.png" type="Texture" id=12]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/1.png" type="Texture" id=13]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/5.png" type="Texture" id=14]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/10.png" type="Texture" id=15]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/2.png" type="Texture" id=16]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/4.png" type="Texture" id=17]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/15.png" type="Texture" id=18]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/7.png" type="Texture" id=19]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/9.png" type="Texture" id=20]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/13.png" type="Texture" id=21]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/0.png" type="Texture" id=22]
+[ext_resource path="res://Bingus Assets/sounds/explosion2.wav" type="AudioStream" id=23]
+[ext_resource path="res://Bosses/JetFireBall.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Enemies/GenericLightBullet.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Enemies/GenericDarkBullet.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Bingus Assets/graphics/jetpackthrow/0.png" type="Texture" id=27]
+[ext_resource path="res://Bingus Assets/graphics/jetpackthrow/2.png" type="Texture" id=28]
+[ext_resource path="res://Bingus Assets/graphics/jetpackthrow/1.png" type="Texture" id=29]
+[ext_resource path="res://Bingus Assets/graphics/jetpackthrow/3.png" type="Texture" id=30]
+[ext_resource path="res://Bosses/LightSpiralBullet.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Bosses/DarkSpiralBullet.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/16.png" type="Texture" id=33]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/11.png" type="Texture" id=34]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/14.png" type="Texture" id=35]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/5.png" type="Texture" id=36]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/7.png" type="Texture" id=37]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/3.png" type="Texture" id=38]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/12.png" type="Texture" id=39]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/9.png" type="Texture" id=40]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/8.png" type="Texture" id=41]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/10.png" type="Texture" id=42]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/13.png" type="Texture" id=43]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/1.png" type="Texture" id=44]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/4.png" type="Texture" id=45]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/6.png" type="Texture" id=46]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/2.png" type="Texture" id=47]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/0.png" type="Texture" id=48]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/15.png" type="Texture" id=49]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 44 ), ExtResource( 47 ), ExtResource( 38 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 46 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 34 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 35 ), ExtResource( 49 ), ExtResource( 33 ) ],
+"loop": false,
+"name": "finalexplosion",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ) ],
+"loop": false,
+"name": "throwdrone",
+"speed": 10.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "flash"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "shipexplosionfade"
+length = 0.68
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.68 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.309804 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 19 ), ExtResource( 12 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 13.0
+} ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade"
+length = 0.64
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.227451 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade"
+length = 0.64
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.227451 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade"
+length = 0.64
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.227451 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "fade"
+length = 0.64
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.227451 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fade"
+length = 0.64
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.227451 ) ]
+}
+
+[node name="JetPackFloppa" type="Area2D"]
+position = Vector2( 4, -143 )
+collision_layer = 1024
+collision_mask = 199
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [ 160.0 ],
+"_edit_vertical_guides_": [ 1120.0 ]
+}
+fireball = ExtResource( 24 )
+lightbullet = ExtResource( 25 )
+darkbullet = ExtResource( 26 )
+lightspiralbullet = ExtResource( 31 )
+darkspiralbullet = ExtResource( 32 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/flash = SubResource( 2 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/shipexplosionfade = SubResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2( 0.87982, 0.466434 )
+polygon = PoolVector2Array( -132.982, -180.09, 129.572, -180.09, 132.982, 45.0224, 101.157, 45.0224, 97.7473, 218.68, 54.5566, 220.824, 52.2834, 141.499, -57.9664, 141.499, -61.3762, 220.824, -104.567, 220.824, -104.567, 38.5907, -132.982, 38.5907, -132.982, -177.946 )
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -6.303
+
+[node name="Fireballfaceright" type="Position2D" parent="."]
+position = Vector2( -103, -36 )
+
+[node name="Fireballfaceleft" type="Position2D" parent="."]
+position = Vector2( 105, -36 )
+
+[node name="Laserfaceright" type="Position2D" parent="."]
+position = Vector2( 56, -64 )
+
+[node name="Laserfaceleft" type="Position2D" parent="."]
+position = Vector2( -56, -64 )
+
+[node name="LaserColorTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="LaserFiring" type="Timer" parent="."]
+autostart = true
+
+[node name="Dronethrowright" type="Position2D" parent="."]
+position = Vector2( 108, 37 )
+
+[node name="Dronethrowleft" type="Position2D" parent="."]
+position = Vector2( -108, 37 )
+
+[node name="SpiralBulletRight" type="Position2D" parent="."]
+position = Vector2( -53, 65 )
+rotation = -1.13446
+
+[node name="SpiralBulletLeft" type="Position2D" parent="."]
+position = Vector2( 53, 65 )
+rotation = 4.27606
+
+[node name="SpiralBulletColorTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -82, -64 )
+frames = SubResource( 3 )
+animation = "explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2"]
+anims/fade = SubResource( 4 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 96, 73 )
+frames = SubResource( 3 )
+animation = "explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite3"]
+anims/fade = SubResource( 5 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 115, -69 )
+frames = SubResource( 3 )
+animation = "explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite4"]
+anims/fade = SubResource( 6 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -77, 52 )
+frames = SubResource( 3 )
+animation = "explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite5"]
+anims/fade = SubResource( 7 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1, 8 )
+frames = SubResource( 3 )
+animation = "explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite6"]
+anims/fade = SubResource( 8 )
+
+[node name="LevelCompleteTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_JetPackFloppa_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_JetPackFloppa_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="timeout" from="LaserColorTimer" to="." method="_on_LaserColorTimer_timeout"]
+[connection signal="timeout" from="LaserFiring" to="." method="_on_LaserFiring_timeout"]
+[connection signal="timeout" from="SpiralBulletColorTimer" to="." method="_on_SpiralBulletColorTimer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2" to="." method="_on_AnimatedSprite2_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite3_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite4" to="." method="_on_AnimatedSprite4_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite5" to="." method="_on_AnimatedSprite5_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite6" to="." method="_on_AnimatedSprite6_animation_finished"]
+[connection signal="timeout" from="LevelCompleteTimer" to="." method="_on_LevelCompleteTimer_timeout"]

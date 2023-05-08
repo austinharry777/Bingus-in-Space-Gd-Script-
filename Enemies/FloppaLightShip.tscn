@@ -1,0 +1,109 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/13.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/5.png" type="Texture" id=2]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/15.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/10.png" type="Texture" id=4]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/14.png" type="Texture" id=5]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/7.png" type="Texture" id=6]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/6.png" type="Texture" id=7]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/3.png" type="Texture" id=8]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/4.png" type="Texture" id=9]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/2.png" type="Texture" id=10]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/1.png" type="Texture" id=11]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/9.png" type="Texture" id=12]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/8.png" type="Texture" id=13]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/12.png" type="Texture" id=14]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/0.png" type="Texture" id=15]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/11.png" type="Texture" id=16]
+[ext_resource path="res://Bingus Assets/graphics/explosiondrone/16.png" type="Texture" id=17]
+[ext_resource path="res://Bingus Assets/graphics/floppalightship.png" type="Texture" id=18]
+[ext_resource path="res://Bingus Assets/sounds/explosion2.wav" type="AudioStream" id=19]
+[ext_resource path="res://Enemies/FloppaLightShip.gd" type="Script" id=20]
+[ext_resource path="res://Enemies/LightCircleBullet.tscn" type="PackedScene" id=21]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "explosion",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": false,
+"name": "floppalightship",
+"speed": 0.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade"
+length = 0.64
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.64 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.227451 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Flash"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.027451, 0.0509804, 0.0509804, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="FloppaLightShip" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource( 20 )
+lightcirclebullet = ExtResource( 21 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "floppalightship"
+speed_scale = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/fade = SubResource( 2 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="AnimatedSprite"]
+anims/Flash = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 9, -61, 9, -66, 13, -72, 17, -72, 20, -68, 20, -62, 23, -62, 25, -58, 26, -46, 54, -63, 61, -63, 69, -35, 30, 8, 30, 59, 15, 59, 13, 58, 11, 33, 4, 76, -7, 76, -15, 39, -16, 60, -34, 60, -36, 7, -73, -35, -65, -65, -31, -46, -31, -58, -29, -61, -25, -61, -24, -67, -21, -72, -17, -72, -14, -68, -14, -63, 9, -63 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -6.23
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="GunPoint" type="Position2D" parent="."]
+position = Vector2( -2, 80 )
+
+[connection signal="area_entered" from="." to="." method="_on_FloppaLightShip_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_FloppaLightShip_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]

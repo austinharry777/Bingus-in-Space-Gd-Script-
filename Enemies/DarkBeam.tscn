@@ -1,0 +1,43 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeam/3.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeamstop/2.png" type="Texture" id=2]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeamstop/3.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeam/1.png" type="Texture" id=4]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeam/0.png" type="Texture" id=5]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeamstop/0.png" type="Texture" id=6]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeamstop/1.png" type="Texture" id=7]
+[ext_resource path="res://Bingus Assets/graphics/enemydarkbeam/2.png" type="Texture" id=8]
+[ext_resource path="res://Enemies/DarkBeam.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "laser",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "stoplaser",
+"speed": 30.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 17.0
+height = 54.0
+
+[node name="DarkBeam" type="Area2D"]
+collision_layer = 512
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "laser"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_DarkBeam_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

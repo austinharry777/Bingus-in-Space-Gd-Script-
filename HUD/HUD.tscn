@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/shipsremaining.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/gradius.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://EnergyMeter/EnergyMeter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=4]
+[ext_resource path="res://EnergyMeter/EnergyMeterDark.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD/BossBar.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer" groups=["HUD"]]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ShipsLeft" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 31.0
+margin_top = 666.0
+margin_right = -1224.0
+margin_bottom = -31.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Player1Lives" type="HBoxContainer" parent="Control/ShipsLeft"]
+margin_left = -0.5
+margin_top = -1.5
+margin_right = 50.5
+margin_bottom = 23.5
+alignment = 2
+
+[node name="LivesCount" type="Label" parent="Control/ShipsLeft/Player1Lives"]
+margin_left = 51.0
+margin_right = 51.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+text = "
+"
+align = 1
+
+[node name="Player1Score" type="HBoxContainer" parent="Control"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 300.0
+margin_bottom = 34.0
+
+[node name="Label" type="Label" parent="Control/Player1Score"]
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="EnergyMeter" parent="." instance=ExtResource( 3 )]
+
+[node name="EnergyMeterDark" parent="." instance=ExtResource( 5 )]
+
+[node name="BossBar" parent="." instance=ExtResource( 6 )]

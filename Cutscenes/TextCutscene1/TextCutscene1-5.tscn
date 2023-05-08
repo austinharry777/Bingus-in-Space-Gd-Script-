@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bingus Assets/sounds/floppatext.wav" type="AudioStream" id=1]
+[ext_resource path="res://Bingus Assets/graphics/gradius.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Cutscenes/TextCutscene1/TextCutscene1-5.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 2 )
+
+[node name="TextCutscene1-5" type="Node2D"]
+script = ExtResource( 3 )
+message = "BINGUS NO FLY."
+
+[node name="NextChar" type="Timer" parent="."]
+
+[node name="MessageDelay" type="Timer" parent="."]
+wait_time = 4.5
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+
+[node name="TextSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = 1.8
+
+[connection signal="timeout" from="NextChar" to="." method="_on_NextChar_timeout"]
+[connection signal="timeout" from="MessageDelay" to="." method="_on_MessageDelay_timeout"]

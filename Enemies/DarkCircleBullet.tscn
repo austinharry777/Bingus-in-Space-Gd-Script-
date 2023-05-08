@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/darkcirclebullet/3.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/darkcirclebullet/1.png" type="Texture" id=2]
+[ext_resource path="res://Bingus Assets/graphics/darkcirclebullet/0.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/darkcirclebullet/2.png" type="Texture" id=4]
+[ext_resource path="res://Bingus Assets/graphics/darkcirclebullet/4.png" type="Texture" id=5]
+[ext_resource path="res://Enemies/DarkCircleBullet.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "darkcirclebullet",
+"speed": 20.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 23.0
+
+[node name="DarkCircleBullet" type="Area2D"]
+collision_layer = 32
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "darkcirclebullet"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 2 )
+
+[node name="BulletDeath" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_DarkCircleBullet_body_entered"]
+[connection signal="timeout" from="BulletDeath" to="." method="_on_BulletDeath_timeout"]
