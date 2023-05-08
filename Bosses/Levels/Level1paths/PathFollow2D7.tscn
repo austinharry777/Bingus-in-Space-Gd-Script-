@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemies/FloppaDrone.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level1paths/PathFollow2D5.gd" type="Script" id=2]
+
+[node name="PathFollow2D7" type="PathFollow2D"]
+loop = false
+script = ExtResource( 2 )
+
+[node name="FloppaDrone" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 0.7, 0.7 )

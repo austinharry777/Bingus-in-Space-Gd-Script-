@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level1paths/PathFollow2D5.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level1paths/Path2D5.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1276, -151, 0, -77.3625, 0, 77.3625, 798, 146, -0.388373, -99.9305, 0.388373, 99.9305, 1276, 344, -3.36359, -84.0896, 3.36359, 84.0896, 794, 542, 1.68179, -82.4079, -1.68179, 82.4079, 1275, 713, 0, 0, 0, 0, 797, 900, 0, 0, 0, 0, 477, 1053 )
+}
+
+[node name="Path2D5" type="Path2D"]
+position = Vector2( 23.2828, 0 )
+scale = Vector2( 0.951189, 1 )
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PathFollow2D5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1276, -151 )
+rotation = 2.70841
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]

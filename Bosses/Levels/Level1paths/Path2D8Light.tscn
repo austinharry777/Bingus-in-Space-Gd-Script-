@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level1paths/Path2D8Light.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level1paths/PathFollow2D8Light.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 638, -156, 1.5874, -74.6078, -1.5874, 74.6078, 957, -3, 0, -66.6708, 0, 66.6708, 640, 146, 3.1748, -73.0204, -3.1748, 73.0204, 955, 293, -3.1748, -71.433, 3.1748, 71.433, 638, 442, 0, -66.6708, 0, 66.6708, 959, 595, 0, -68.2582, 0, 68.2582, 637, 720, 0, 0, 0, 0, 956, 892 )
+}
+
+[node name="Path2D8Light" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -149.0, 151.0, 300.0, 448.0, 600.0, 900.0 ],
+"_edit_vertical_guides_": [ 641.0, 960.0 ]
+}
+
+[node name="PathFollow2D8Light" parent="." instance=ExtResource( 2 )]
+position = Vector2( 638, -156 )
+rotation = 0.245024
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]

@@ -1,0 +1,308 @@
+[gd_scene load_steps=77 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/shiptiltright/shiptilt1.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltright/shiptilt5.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltright/shiptilt2.png" type="Texture" id=4]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltright/shiptilt3.png" type="Texture" id=5]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltright/shiptilt4.png" type="Texture" id=6]
+[ext_resource path="res://Bingus Assets/graphics/gunflash/0.png" type="Texture" id=7]
+[ext_resource path="res://Bingus Assets/graphics/gunflash/2.png" type="Texture" id=8]
+[ext_resource path="res://Bingus Assets/graphics/gunflash/1.png" type="Texture" id=9]
+[ext_resource path="res://Bingus Assets/graphics/gunflash/3.png" type="Texture" id=10]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/16.png" type="Texture" id=11]
+[ext_resource path="res://Bingus Assets/graphics/gunflash/4.png" type="Texture" id=12]
+[ext_resource path="res://Bingus Assets/graphics/lightshield/0.png" type="Texture" id=13]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltrightreverse/shiptilt3.png" type="Texture" id=14]
+[ext_resource path="res://Bingus Assets/graphics/lightshield/2.png" type="Texture" id=15]
+[ext_resource path="res://Bingus Assets/graphics/lightshield/1.png" type="Texture" id=16]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltrightreverse/shiptilt2.png" type="Texture" id=17]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltrightreverse/shiptilt5.png" type="Texture" id=18]
+[ext_resource path="res://Bingus Assets/graphics/lightshield/3.png" type="Texture" id=19]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltrightreverse/shiptilt1.png" type="Texture" id=20]
+[ext_resource path="res://Bingus Assets/graphics/shiptiltrightreverse/shiptilt4.png" type="Texture" id=21]
+[ext_resource path="res://Bingus Assets/graphics/lightshield/4.png" type="Texture" id=22]
+[ext_resource path="res://Bingus Assets/graphics/darkshield/1.png" type="Texture" id=23]
+[ext_resource path="res://Bingus Assets/graphics/darkshield/2.png" type="Texture" id=24]
+[ext_resource path="res://Bingus Assets/graphics/darkshield/4.png" type="Texture" id=25]
+[ext_resource path="res://Bingus Assets/graphics/darkshield/0.png" type="Texture" id=26]
+[ext_resource path="res://Bingus Assets/graphics/darkshield/3.png" type="Texture" id=27]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltright/2.png" type="Texture" id=28]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltreverse/2.png" type="Texture" id=29]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltright/4.png" type="Texture" id=30]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltreverse/4.png" type="Texture" id=31]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltright/1.png" type="Texture" id=32]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltright/3.png" type="Texture" id=33]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltreverse/0.png" type="Texture" id=34]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltright/0.png" type="Texture" id=35]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltreverse/1.png" type="Texture" id=36]
+[ext_resource path="res://Bingus Assets/graphics/darkshiptiltreverse/3.png" type="Texture" id=37]
+[ext_resource path="res://Bingus Assets/graphics/darkgunflash/3.png" type="Texture" id=38]
+[ext_resource path="res://Bingus Assets/graphics/darkgunflash/4.png" type="Texture" id=39]
+[ext_resource path="res://Bingus Assets/graphics/darkgunflash/2.png" type="Texture" id=40]
+[ext_resource path="res://Bingus Assets/graphics/darkgunflash/0.png" type="Texture" id=41]
+[ext_resource path="res://Bingus Assets/graphics/darkgunflash/1.png" type="Texture" id=42]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/14.png" type="Texture" id=43]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/5.png" type="Texture" id=44]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/11.png" type="Texture" id=45]
+[ext_resource path="res://BingusDash/Particles2D.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Bingus Assets/graphics/afterburners/4.png" type="Texture" id=47]
+[ext_resource path="res://Bingus Assets/graphics/afterburners/1.png" type="Texture" id=48]
+[ext_resource path="res://Bingus Assets/graphics/afterburners/2.png" type="Texture" id=49]
+[ext_resource path="res://Bingus Assets/graphics/afterburners/3.png" type="Texture" id=50]
+[ext_resource path="res://Bingus Assets/graphics/afterburners/0.png" type="Texture" id=51]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/4.png" type="Texture" id=52]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/15.png" type="Texture" id=53]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/12.png" type="Texture" id=54]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/6.png" type="Texture" id=55]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/2.png" type="Texture" id=56]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/13.png" type="Texture" id=57]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/10.png" type="Texture" id=58]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/0.png" type="Texture" id=59]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/1.png" type="Texture" id=60]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/8.png" type="Texture" id=61]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/7.png" type="Texture" id=62]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/9.png" type="Texture" id=63]
+[ext_resource path="res://Bingus Assets/graphics/shipexplosion/3.png" type="Texture" id=64]
+[ext_resource path="res://Bingus Assets/sounds/explosion2.wav" type="AudioStream" id=65]
+[ext_resource path="res://SuperBeam/SuperBeam.tscn" type="PackedScene" id=66]
+[ext_resource path="res://SuperBeamDark/SuperBeamDarkHead.tscn" type="PackedScene" id=67]
+[ext_resource path="res://SuperBeam/SuperBeamHead.tscn" type="PackedScene" id=68]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 34 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 31 ) ],
+"loop": false,
+"name": "darkshiptiltreverse",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 33 ), ExtResource( 30 ) ],
+"loop": false,
+"name": "darkshiptiltright",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 56 ), ExtResource( 64 ), ExtResource( 52 ), ExtResource( 44 ), ExtResource( 55 ), ExtResource( 62 ), ExtResource( 61 ), ExtResource( 63 ), ExtResource( 58 ), ExtResource( 45 ), ExtResource( 54 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 53 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "shipexplosion",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 21 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "shiptiltreverse",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "shiptiltright",
+"speed": 20.0
+} ]
+
+[sub_resource type="Animation" id=7]
+resource_name = "dashflash"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0430072, 0.0543021, 0.0933995, 0.106432, 0.142923, 0.155521, 0.193315, 0.20461, 0.243708, 0.256306, 0.283674, 0.298444 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.929412, 0.952941, 0.960784, 1 ), Color( 0.960784, 0.976471, 0.984314, 1 ), Color( 0.0235294, 0.0431373, 0.0470588, 1 ), Color( 0.0392157, 0.0784314, 0.0784314, 1 ), Color( 0.956863, 0.976471, 0.980392, 1 ), Color( 0.960784, 0.980392, 0.988235, 1 ), Color( 0.0352941, 0.0588235, 0.0627451, 1 ), Color( 0.0352941, 0.0627451, 0.0705882, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.0352941, 0.0666667, 0.0705882, 1 ), Color( 0.0431373, 0.0823529, 0.0862745, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "shipexplosionfade"
+length = 0.68
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.68 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.309804 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "invulnerableflash"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.0823529, 0.0862745, 0.0862745, 1 ), Color( 0.682353, 0.694118, 0.698039, 1 ), Color( 0.0705882, 0.0823529, 0.0862745, 1 ), Color( 0.701961, 0.721569, 0.729412, 1 ), Color( 0.0823529, 0.0862745, 0.0862745, 1 ), Color( 0.666667, 0.682353, 0.686275, 1 ), Color( 0.0666667, 0.0705882, 0.0705882, 1 ), Color( 0.858824, 0.886275, 0.894118, 1 ), Color( 0.0745098, 0.0784314, 0.0784314, 1 ), Color( 0.866667, 0.886275, 0.890196, 1 ), Color( 0.0745098, 0.0784314, 0.0784314, 1 ), Color( 0.858824, 0.870588, 0.87451, 1 ), Color( 0.0823529, 0.0862745, 0.0862745, 1 ), Color( 0.862745, 0.890196, 0.898039, 1 ), Color( 0.0823529, 0.0862745, 0.0862745, 1 ), Color( 0.843137, 0.862745, 0.870588, 1 ), Color( 0.0784314, 0.0823529, 0.0823529, 1 ), Color( 0.921569, 0.94902, 0.94902, 1 ), Color( 0.0745098, 0.0784314, 0.0784314, 1 ), Color( 0.901961, 0.941176, 0.941176, 1 ), Color( 0.0745098, 0.0784314, 0.0784314, 1 ), Color( 0.823529, 0.862745, 0.862745, 1 ), Color( 0.0745098, 0.0784314, 0.0784314, 1 ), Color( 0.827451, 0.866667, 0.866667, 1 ), Color( 0.0705882, 0.0745098, 0.0745098, 1 ), Color( 0.831373, 0.870588, 0.870588, 1 ), Color( 0.0745098, 0.0784314, 0.0784314, 1 ), Color( 0.815686, 0.85098, 0.85098, 1 ), Color( 0.0627451, 0.0666667, 0.0666667, 1 ), Color( 0.858824, 0.886275, 0.886275, 1 ), Color( 0.0470588, 0.0509804, 0.0509804, 1 ), Color( 0.796078, 0.831373, 0.831373, 1 ), Color( 0.054902, 0.0588235, 0.0588235, 1 ), Color( 0.854902, 0.890196, 0.890196, 1 ), Color( 0.0705882, 0.0745098, 0.0745098, 1 ), Color( 0.807843, 0.835294, 0.835294, 1 ), Color( 0.0470588, 0.0509804, 0.0509804, 1 ), Color( 0.847059, 0.866667, 0.866667, 1 ), Color( 0.0745098, 0.0823529, 0.0823529, 1 ), Color( 0.843137, 0.894118, 0.894118, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": false,
+"name": "darkgunflash",
+"speed": 60.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "gunflash",
+"speed": 60.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "darkshield",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "lightshield",
+"speed": 20.0
+} ]
+
+[sub_resource type="Animation" id=6]
+resource_name = "dashfade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.152941 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 51 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "afterburner",
+"speed": 60.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 628, 576 )
+collision_mask = 8
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+SuperBeam = ExtResource( 66 )
+SuperBeamHead = ExtResource( 68 )
+SuperBeamDarkHead = ExtResource( 67 )
+
+[node name="ShiptiltAnimation" type="AnimatedSprite" parent="."]
+modulate = Color( 0.862745, 0.905882, 0.921569, 1 )
+position = Vector2( 1, -16 )
+frames = SubResource( 3 )
+animation = "shiptiltright"
+
+[node name="DashFlash" type="AnimationPlayer" parent="ShiptiltAnimation"]
+anims/dashflash = SubResource( 7 )
+
+[node name="ShipExplosionFade" type="AnimationPlayer" parent="ShiptiltAnimation"]
+anims/shipexplosionfade = SubResource( 9 )
+
+[node name="InvulnerableFlash" type="AnimationPlayer" parent="ShiptiltAnimation"]
+anims/invulnerableflash = SubResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -9, -28, 0, -52, 2, -52, 10, -29, 12, -21, 34, -9, 34, 3, 11, 10, 8, 16, -4, 16, -9, 10, -31, 2, -31, -10, -11, -21 )
+
+[node name="GunFlash" type="AnimatedSprite" parent="."]
+z_index = -1
+frames = SubResource( 4 )
+animation = "gunflash"
+offset = Vector2( 1, -16 )
+
+[node name="LeftGun" type="Position2D" parent="."]
+position = Vector2( -18, -25 )
+
+[node name="RightGun" type="Position2D" parent="."]
+position = Vector2( 20, -25 )
+
+[node name="Shield" type="AnimatedSprite" parent="."]
+position = Vector2( 1, -15 )
+z_index = -3
+frames = SubResource( 5 )
+animation = "lightshield"
+
+[node name="SuperBeamPos" type="Position2D" parent="."]
+position = Vector2( 0, -15 )
+
+[node name="SuperBeamTimer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[node name="BingusDash" parent="." instance=ExtResource( 46 )]
+process_priority = 1
+position = Vector2( 0, -15 )
+z_index = -2
+lifetime = 0.5
+speed_scale = 2.33
+draw_order = 1
+initial_velocity = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BingusDash"]
+anims/dashfade = SubResource( 6 )
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="LaunchTimer" type="Timer" parent="."]
+wait_time = 11.0
+one_shot = true
+autostart = true
+
+[node name="AfterburnerTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="AfterburnerAnimation" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 8 )
+animation = "afterburner"
+frame = 3
+offset = Vector2( 0, 37 )
+
+[node name="IsVulnerableTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 65 )
+pitch_scale = 0.79
+
+[node name="SuperBeamDelay" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+
+[connection signal="animation_finished" from="ShiptiltAnimation/DashFlash" to="." method="_on_DashFlash_animation_finished"]
+[connection signal="animation_finished" from="ShiptiltAnimation/InvulnerableFlash" to="." method="_on_InvulnerableFlash_animation_finished"]
+[connection signal="timeout" from="SuperBeamTimer" to="." method="_on_SuperBeamTimer_timeout"]
+[connection signal="animation_finished" from="BingusDash/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="LaunchTimer" to="." method="_on_LaunchTimer_timeout"]
+[connection signal="timeout" from="AfterburnerTimer" to="." method="_on_AfterburnerTimer_timeout"]
+[connection signal="timeout" from="IsVulnerableTimer" to="." method="_on_IsVulnerableTimer_timeout"]
+[connection signal="timeout" from="SuperBeamDelay" to="." method="_on_SuperBeamDelay_timeout"]

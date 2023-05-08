@@ -1,0 +1,227 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/EarthClouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/BeginCanyon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/CanyonLayer3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PlayerBulletLight/Playerlightbullet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Canyon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/BaseEntrance.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/BaseEntranceRoof.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Levels/BossBackground.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Bingus Assets/sounds/bingus level1.wav" type="AudioStream" id=11]
+[ext_resource path="res://PlayerBulletDark/Playerdarkbullet.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Bingus Assets/sounds/boss1.wav" type="AudioStream" id=13]
+[ext_resource path="res://SuperBeamDark/SuperBeamDark.tscn" type="PackedScene" id=14]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Bingus Assets/sounds/bingus game over.wav" type="AudioStream" id=16]
+[ext_resource path="res://Levels/Earth2D.gd" type="Script" id=20]
+
+[node name="Earth" type="Node"]
+
+[node name="EarthSpawnTimers" type="Node2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="EarthSpawnTimers"]
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="2D1Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 13.0
+one_shot = true
+autostart = true
+
+[node name="2D2Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 17.0
+one_shot = true
+autostart = true
+
+[node name="2D3Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 21.0
+one_shot = true
+autostart = true
+
+[node name="2D4Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 25.0
+one_shot = true
+autostart = true
+
+[node name="2D5Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 29.0
+one_shot = true
+autostart = true
+
+[node name="2D6Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 29.0
+one_shot = true
+autostart = true
+
+[node name="2D7Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 33.0
+one_shot = true
+autostart = true
+
+[node name="2D8Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 33.0
+one_shot = true
+autostart = true
+
+[node name="RandomSpawner1Timer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 37.0
+one_shot = true
+autostart = true
+
+[node name="2D1LightTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 42.0
+one_shot = true
+autostart = true
+
+[node name="2D2DarkTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 46.0
+one_shot = true
+autostart = true
+
+[node name="2D3LightTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 50.0
+one_shot = true
+autostart = true
+
+[node name="2D4DarkTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 54.0
+one_shot = true
+autostart = true
+
+[node name="2D5LightTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 57.0
+one_shot = true
+autostart = true
+
+[node name="2D6DarkTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 57.0
+one_shot = true
+autostart = true
+
+[node name="2D7DarkTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="2D8LightTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="RandomSpawnerDarkTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 65.0
+one_shot = true
+autostart = true
+
+[node name="RandomSpawnerLight" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 65.0
+one_shot = true
+autostart = true
+
+[node name="LightTankTimer1" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 74.0
+one_shot = true
+autostart = true
+
+[node name="DarkTankTimer1" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 75.0
+one_shot = true
+autostart = true
+
+[node name="DarkShipTimer1" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 80.0
+one_shot = true
+autostart = true
+
+[node name="LightShipTimer2" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 88.0
+one_shot = true
+autostart = true
+
+[node name="DualShipTimer1" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 96.0
+one_shot = true
+autostart = true
+
+[node name="DualShipTimer2" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 104.0
+one_shot = true
+autostart = true
+
+[node name="BeamShipTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 112.0
+one_shot = true
+autostart = true
+
+[node name="BossTimer" type="Timer" parent="EarthSpawnTimers"]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="EarthSpawnTimers"]
+pause_mode = 2
+stream = ExtResource( 16 )
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="EarthSpawnTimers"]
+stream = ExtResource( 13 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640, 410 )
+Bullet = ExtResource( 6 )
+DarkBullet = ExtResource( 12 )
+SuperBeamDark = ExtResource( 14 )
+
+[node name="Level1" parent="Player" instance=ExtResource( 1 )]
+
+[node name="EarthClouds" parent="Player" instance=ExtResource( 3 )]
+layer = -90
+scrolling_speed = 350
+
+[node name="BeginCanyon" parent="Player" instance=ExtResource( 4 )]
+
+[node name="CanyonLayer3" parent="Player" instance=ExtResource( 5 )]
+
+[node name="Canyon" parent="Player" instance=ExtResource( 7 )]
+
+[node name="BaseEntrance" parent="Player" instance=ExtResource( 8 )]
+layer = -95
+
+[node name="BaseEntranceRoof" parent="Player" instance=ExtResource( 9 )]
+layer = 1
+
+[node name="BossBackground" parent="Player" instance=ExtResource( 10 )]
+layer = -96
+
+[node name="HUD" parent="Player" instance=ExtResource( 15 )]
+
+[connection signal="timeout" from="EarthSpawnTimers/2D1Timer" to="EarthSpawnTimers" method="_on_2D1Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D2Timer" to="EarthSpawnTimers" method="_on_2D2Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D3Timer" to="EarthSpawnTimers" method="_on_2D3Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D4Timer" to="EarthSpawnTimers" method="_on_2D4Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D5Timer" to="EarthSpawnTimers" method="_on_2D5Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D6Timer" to="EarthSpawnTimers" method="_on_2D6Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D7Timer" to="EarthSpawnTimers" method="_on_2D7Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D8Timer" to="EarthSpawnTimers" method="_on_2D8Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/RandomSpawner1Timer" to="EarthSpawnTimers" method="_on_RandomSpawner1Timer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D1LightTimer" to="EarthSpawnTimers" method="_on_2D1LightTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D2DarkTimer" to="EarthSpawnTimers" method="_on_2D2DarkTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D3LightTimer" to="EarthSpawnTimers" method="_on_2D3LightTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D4DarkTimer" to="EarthSpawnTimers" method="_on_2D4DarkTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D5LightTimer" to="EarthSpawnTimers" method="_on_2D5LightTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D6DarkTimer" to="EarthSpawnTimers" method="_on_2D6DarkTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D7DarkTimer" to="EarthSpawnTimers" method="_on_2D7DarkTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/2D8LightTimer" to="EarthSpawnTimers" method="_on_2D8LightTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/RandomSpawnerDarkTimer" to="EarthSpawnTimers" method="_on_RandomSpawnerDarkTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/RandomSpawnerLight" to="EarthSpawnTimers" method="_on_RandomSpawnerLight_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/LightTankTimer1" to="EarthSpawnTimers" method="_on_LightTankTimer1_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/DarkTankTimer1" to="EarthSpawnTimers" method="_on_DarkTankTimer1_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/DarkShipTimer1" to="EarthSpawnTimers" method="_on_DarkShipTimer1_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/LightShipTimer2" to="EarthSpawnTimers" method="_on_LightShipTimer2_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/DualShipTimer1" to="EarthSpawnTimers" method="_on_DualShipTimer1_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/DualShipTimer2" to="EarthSpawnTimers" method="_on_DualShipTimer2_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/BeamShipTimer" to="EarthSpawnTimers" method="_on_BeamShipTimer_timeout"]
+[connection signal="timeout" from="EarthSpawnTimers/BossTimer" to="EarthSpawnTimers" method="_on_BossTimer_timeout"]

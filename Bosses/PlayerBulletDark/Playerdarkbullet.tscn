@@ -1,0 +1,55 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbullet/1.png" type="Texture" id=1]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbullet/0.png" type="Texture" id=2]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbullet/2.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbullet/3.png" type="Texture" id=4]
+[ext_resource path="res://PlayerBulletDark/Playerdarkbullet.gd" type="Script" id=5]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/3.png" type="Texture" id=6]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/4.png" type="Texture" id=7]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/7.png" type="Texture" id=8]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/2.png" type="Texture" id=9]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/1.png" type="Texture" id=10]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/5.png" type="Texture" id=11]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/6.png" type="Texture" id=12]
+[ext_resource path="res://Bingus Assets/graphics/shipdarkbulletstop/0.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "bulletstop",
+"speed": 50.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "playerdarkbullet",
+"speed": 20.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 7.0
+height = 48.0
+
+[node name="Playerdarkbullet" type="Area2D"]
+z_index = -2
+collision_layer = 4
+collision_mask = 8
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "playerdarkbullet"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+shape = SubResource( 2 )
+
+[node name="BulletDeath" type="Timer" parent="."]
+wait_time = 0.16
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_Playerdarkbullet_area_entered"]
+[connection signal="timeout" from="BulletDeath" to="." method="_on_BulletDeath_timeout"]

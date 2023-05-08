@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level1paths/Path2D4Dark.gd" type="Script" id=1]
+[ext_resource path="res://Levels/Level1paths/PathFollow2D4Dark.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1476, 148, 110.001, 0, -110.001, 0, 377, 146, -3.36739, -77.4499, 3.36739, 77.4499, 226, 289, -111.124, -72.96, 111.124, 72.96, 672, 443, 0, 0, 0, 0, 985, 893 )
+}
+
+[node name="Path2D4Dark" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 147.0, 299.0, 450.0, 899.0 ],
+"_edit_vertical_guides_": [ 1476.0, 382.0, 231.0, 679.0, 991.0 ]
+}
+
+[node name="PathFollow2D4Dark" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1476, 148 )
+rotation = -3.13958
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true

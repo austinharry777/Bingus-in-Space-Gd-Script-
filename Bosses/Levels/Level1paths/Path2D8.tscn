@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level1paths/PathFollow2D8.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level1paths/Path2D8.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 637, -156, 2.37841, -107.029, -2.37841, 107.029, 318, 241, 0, -118.921, 0, 118.921, 556, 491, 0, 0, 0, 0, 316, 719, 0, 0, 0, 0, 37, 974 )
+}
+
+[node name="Path2D8" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -151.0, 251.0, 500.0 ],
+"_edit_vertical_guides_": [ 641.0, 321.0, 560.0 ]
+}
+
+[node name="PathFollow2D8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 637, -156 )
+rotation = 2.39642
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 48.0
+one_shot = true
+autostart = true

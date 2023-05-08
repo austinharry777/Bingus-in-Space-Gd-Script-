@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Level1paths/PathFollow2D1Light.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level1paths/Path2D1Light.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 326, -255, -2.11893, -114.422, 2.11893, 114.422, 323, 247, 0, 0, 0, 0, 1097, 813, 0, 0, 0, 0, 1501, 1104 )
+}
+
+[node name="Path2D1Light" type="Path2D"]
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 252.0, 819.0, -250.0 ],
+"_edit_vertical_guides_": [ 323.0, 1503.0, 1100.0 ]
+}
+
+[node name="PathFollow2D1Light" parent="." instance=ExtResource( 1 )]
+position = Vector2( 326, -255 )
+rotation = 1.5838
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true

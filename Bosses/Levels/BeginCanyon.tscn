@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/begincanyon.png" type="Texture" id=1]
+[ext_resource path="res://Levels/BeginCanyon.gd" type="Script" id=2]
+
+[node name="BeginCanyon" type="ParallaxBackground"]
+layer = -95
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 0, -3400 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 61.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

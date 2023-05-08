@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/earth2.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=2]
+[ext_resource path="res://Bingus Assets/graphics/Launchpad.png" type="Texture" id=3]
+[ext_resource path="res://Bingus Assets/graphics/launcharm.png" type="Texture" id=4]
+[ext_resource path="res://Levels/LaunchArm.gd" type="Script" id=5]
+[ext_resource path="res://Levels/LaunchArm2.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "BackgroundZoom"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ) ]
+}
+
+[node name="Level1" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 0, 14400 )
+
+[node name="StartTimer" type="Timer" parent="ParallaxLayer"]
+wait_time = 0.5
+
+[node name="LaunchTimer" type="Timer" parent="ParallaxLayer"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="SlowdownTimer" type="Timer" parent="ParallaxLayer"]
+wait_time = 0.5
+
+[node name="TextureRect" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 640, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -3600 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxLayer/TextureRect"]
+anims/BackgroundZoom = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="LaunchPad" type="ParallaxLayer" parent="."]
+
+[node name="Pad" type="Sprite" parent="LaunchPad"]
+position = Vector2( 640, 400 )
+texture = ExtResource( 3 )
+
+[node name="LaunchArm" type="Sprite" parent="."]
+position = Vector2( 844, 530 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="LaunchArm"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="LaunchArm"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="LaunchArm2" type="Sprite" parent="."]
+position = Vector2( 854, 530 )
+texture = ExtResource( 4 )
+offset = Vector2( -415, 0 )
+flip_h = true
+script = ExtResource( 6 )
+
+[node name="Timer" type="Timer" parent="LaunchArm2"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="LaunchArm2"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="BackgroundRelease" type="Timer" parent="."]
+wait_time = 65.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ParallaxLayer/StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="ParallaxLayer/LaunchTimer" to="." method="_on_LaunchTimer_timeout"]
+[connection signal="timeout" from="ParallaxLayer/SlowdownTimer" to="." method="_on_SlowdownTimer_timeout"]
+[connection signal="timeout" from="LaunchArm/Timer" to="LaunchArm" method="_on_Timer_timeout"]
+[connection signal="timeout" from="LaunchArm/Timer2" to="LaunchArm" method="_on_Timer2_timeout"]
+[connection signal="timeout" from="LaunchArm2/Timer" to="LaunchArm2" method="_on_Timer_timeout"]
+[connection signal="timeout" from="LaunchArm2/Timer2" to="LaunchArm2" method="_on_Timer2_timeout"]
+[connection signal="timeout" from="BackgroundRelease" to="." method="_on_BackgroundRelease_timeout"]
