@@ -1,7 +1,7 @@
 extends Area2D
 
 export (PackedScene) var lightbullet
-var speed = 1
+var speed = 50
 var shooting = false
 onready var bulletdelay = $BulletDelay 
 var num_bullets = 90
@@ -10,8 +10,8 @@ var start_angle = 0
 
 var velocity = Vector2.ZERO
 
-func _process(_delta):
-	translate(velocity)
+func _process(delta):
+	translate(velocity * delta)
 	if shooting == true:
 		spawn_bullets()
 		shooting = false
@@ -38,7 +38,7 @@ func spawn_bullets():
 		bullet.global_position = global_position + Vector2(0,0)
 		bullet.rotation_degrees = start_angle + i * angle_step
 		get_parent().add_child(bullet)
-		bullet.set_bullet_speed_and_direction(Vector2(1, 0).rotated(deg2rad(bullet.rotation_degrees - 90)))
+		bullet.set_bullet_speed_and_direction(Vector2(150, 0).rotated(deg2rad(bullet.rotation_degrees - 90)))
 		yield(bulletdelay, "timeout") # wait for the remaining delay before spawning the next bullet
 
 func _on_BulletDelay_timeout():
@@ -46,5 +46,7 @@ func _on_BulletDelay_timeout():
 	if start_angle >= 360:
 		bulletdelay.stop()
 		queue_free()
+
+
 
 

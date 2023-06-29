@@ -6,11 +6,11 @@ var boss_arrived = false
 var boss_direction = 1 # 1 = right, -1 = left
 var scored = false
 
-onready var player = get_node("/root/TestScene/Player")
+onready var player = get_node("/root/Earth/Player") #this will need to be changed when testing
 onready var flash = $AnimatedSprite/AnimationPlayer
 onready var anim_player = $AnimatedSprite #reference to the animated sprite
 onready var collisionshape = $CollisionPolygon2D
-onready var boss_meter = get_node("/root/TestScene/Player/HUD/BossBar")
+onready var boss_meter = get_node("/root/Earth/Player/HUD/BossBar") #this will also need to be changed when testing
 onready var explosion1= $AnimatedSprite2
 onready var explosion1_fade= $AnimatedSprite2/AnimationPlayer
 onready var explosion2= $AnimatedSprite3
@@ -220,11 +220,11 @@ func shoot_laser():
 			lightbullet_instance.global_position = laserfaceright.global_position
 			lightbullet_instance.rotation_degrees = 90
 			get_parent().add_child(lightbullet_instance)
-			lightbullet_instance.set_bullet_speed_and_direction(Vector2(3,0))
+			lightbullet_instance.set_bullet_speed_and_direction(Vector2(500,0))
 			yield(get_tree().create_timer(1), "timeout")
 			if is_instance_valid(lightbullet_instance):
 				var homing_direction = player.position - lightbullet_instance.global_position
-				lightbullet_instance.set_bullet_speed_and_direction(homing_direction * 0.01)
+				lightbullet_instance.set_bullet_speed_and_direction(homing_direction)
 				lightbullet_instance.rotation = homing_direction.angle() + 3.14/2
 			else:
 				return 
@@ -233,12 +233,12 @@ func shoot_laser():
 			lightbullet_instance.global_position = laserfaceleft.global_position
 			lightbullet_instance.rotation_degrees = -90
 			get_parent().add_child(lightbullet_instance)
-			lightbullet_instance.set_bullet_speed_and_direction(Vector2(-3,0))
+			lightbullet_instance.set_bullet_speed_and_direction(Vector2(-500,0))
 			yield(get_tree().create_timer(1), "timeout")
 			#check to see if bullet has not been destroyed
 			if is_instance_valid(lightbullet_instance):
 				var homing_direction = player.position - lightbullet_instance.global_position
-				lightbullet_instance.set_bullet_speed_and_direction(homing_direction * 0.01)
+				lightbullet_instance.set_bullet_speed_and_direction(homing_direction)
 				lightbullet_instance.rotation = homing_direction.angle() + 3.14/2
 			else:
 				return
@@ -251,11 +251,11 @@ func shoot_laser():
 			darkbullet_instance.global_position = laserfaceright.global_position
 			darkbullet_instance.rotation_degrees = 90
 			get_parent().add_child(darkbullet_instance)
-			darkbullet_instance.set_bullet_speed_and_direction(Vector2(3,0))
+			darkbullet_instance.set_bullet_speed_and_direction(Vector2(500,0))
 			yield(get_tree().create_timer(1), "timeout")
 			if is_instance_valid(darkbullet_instance):
 				var homing_direction = player.position - darkbullet_instance.global_position
-				darkbullet_instance.set_bullet_speed_and_direction(homing_direction * 0.01)
+				darkbullet_instance.set_bullet_speed_and_direction(homing_direction)
 				darkbullet_instance.rotation = homing_direction.angle() + 3.14/2
 			else:
 				return
@@ -265,11 +265,11 @@ func shoot_laser():
 			darkbullet_instance.global_position = laserfaceleft.global_position
 			darkbullet_instance.rotation_degrees = -90
 			get_parent().add_child(darkbullet_instance)
-			darkbullet_instance.set_bullet_speed_and_direction(Vector2(-3,0))
+			darkbullet_instance.set_bullet_speed_and_direction(Vector2(-500,0))
 			yield(get_tree().create_timer(1), "timeout")
 			if is_instance_valid(darkbullet_instance):
 				var homing_direction = player.position - darkbullet_instance.global_position
-				darkbullet_instance.set_bullet_speed_and_direction(homing_direction * 0.01)
+				darkbullet_instance.set_bullet_speed_and_direction(homing_direction)
 				darkbullet_instance.rotation = homing_direction.angle() + 3.14/2
 			else:
 				return

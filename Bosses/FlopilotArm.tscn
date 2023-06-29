@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bingus Assets/graphics/flopilotarm.png" type="Texture" id=1]
+[ext_resource path="res://Bosses/FlopilotArm.gd" type="Script" id=2]
+
+[node name="FlopilotArm" type="Area2D"]
+position = Vector2( 896, -876 )
+rotation = -3.14159
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+collision_layer = 1024
+collision_mask = 199
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1, -543 )
+texture = ExtResource( 1 )
+
+[node name="Arm1Hitbox" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( -1, -543 )
+polygon = PoolVector2Array( -35, 540, 39, 540, 27, 420, 34, 382, 38, 379, 28, 263, 32, 226, 37, 219, 24, 103, 28, 97, 29, 67, 34, 61, 24, -54, 28, -90, 35, -97, 28, -198, 23, -212, 24, -229, 55, -253, 58, -339, 43, -344, 34, -453, 50, -474, 24, -504, 19, -535, -5, -530, 0, -501, -10, -491, -12, -462, -21, -442, -33, -437, -34, -387, -40, -307, -57, -285, -36, -235, -33, -229, -31, -207, -35, -203, -40, -93, -34, -91, -31, -49, -35, -41, -39, 66, -31, 67, -29, 102, -39, 222, -27, 262, -31, 275, -36, 380, -28, 382, -26, 425, -31, 437 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 13.0088, -1021.17 )
+
+[node name="ArmAttachedTimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_FlopilotArm_body_entered"]
+[connection signal="timeout" from="ArmAttachedTimer" to="." method="_on_ArmAttachedTimer_timeout"]
+[connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]
